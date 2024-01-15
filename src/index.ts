@@ -1,3 +1,3 @@
-import { ConfigConstructor, Config } from "config";
+import * as config from "config";
 
-export { ConfigConstructor, Config };
+export { config };

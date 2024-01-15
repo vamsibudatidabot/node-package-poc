@@ -9,7 +9,7 @@
         "forceConsistentCasingInFileNames": true,
         "listEmittedFiles": true,
         "moduleResolution": "node",
-        "module": "commonjs",
+        "module": "es6",
         "noEmitOnError": true,
         "noFallthroughCasesInSwitch": true,
         "outDir": "build",
