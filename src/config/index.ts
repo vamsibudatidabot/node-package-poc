@@ -5,7 +5,7 @@ import dotenv from 'dotenv';
 import path from 'path';
 import fs from 'fs';
 import { Pool, Options as PoolOptions } from 'generic-pool'
-import { AppConfig, Config } from "interfaces/app";
+import { AppConfig, Config } from "interfaces";
 
 /**
  * This is the config for all possible environments run by this service.

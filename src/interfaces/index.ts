@@ -1,3 +1,3 @@
-import * as AppInterfaces from './app';
+import {Config, AppConfig} from './app';
 
-export { AppInterfaces }
+export { Config, AppConfig }
