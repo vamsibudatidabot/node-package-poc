@@ -4,7 +4,6 @@ import * as snowflake from 'snowflake-sdk';
 import dotenv from 'dotenv';
 import path from 'path';
 import fs from 'fs';
-import {logger, SERVICE_NAME} from 'logger';
 import { Pool, Options as PoolOptions } from 'generic-pool'
 
 /**
@@ -33,16 +32,16 @@ const KnexConfigDefaults: Knex.Knex.Config = {
     // Default logs to console, we need to use our logger function instead.
     log: {
         warn(message) {
-            logger.warning(message);
+            console.warn(message);
         },
         error(message) {
-            logger.error(message);
+            console.error(message);
         },
         deprecate(message) {
-            logger.crit(`Deprecated Error: ${message}`);
+            console.debug(`Deprecated Error: ${message}`);
         },
         debug(message) {
-            logger.debug(message);
+            console.debug(message);
         },
     }
 }
@@ -62,7 +61,7 @@ const snowFlakeConnectionPoolOptions: PoolOptions = {
 function getConfig(): Config {
     return {
         app: {
-            name: SERVICE_NAME,
+            name: 'test',
             port: dabotParseInt(getEnv('APP_PORT', '5004')) // YOUR HTTP PORT
         },
         metaDatabase: {
@@ -89,17 +88,17 @@ class ConfigConstructor {
         if (nodeEnv()) {
             // pathUrl = `${pathUrl}.${nodeEnv()}`; // This can be used for local setup
             pathUrl = `${getEnv('CONFIG', '/usr/src/app/conf/.env')}`;
-            logger.warning(`Original path is ${pathUrl}.`);
+            console.warn(`Original path is ${pathUrl}.`);
         }
         else {
-            logger.error(`process.env.NODE_ENV not set or understood=${process.env?.NODE_ENV}`);
+            console.error(`process.env.NODE_ENV not set or understood=${process.env?.NODE_ENV}`);
         }
         if (fs.existsSync(pathUrl)) {
-            logger.info(`Reading config from : ${pathUrl}`);
+            console.info(`Reading config from : ${pathUrl}`);
             dotenv.config({ path: pathUrl, debug: !(nodeEnv() === NODE_ENVIRONMENTS.test) });
         }
         else {
-            logger.warning(`No config file ${pathUrl} found.`);
+            console.warn(`No config file ${pathUrl} found.`);
         }
 
         this.data = getConfig();

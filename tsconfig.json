@@ -1,0 +1,11 @@
+{
+    "extends": "./tsconfig.common",
+    "exclude": ["node_modules", "eslint:recommended"],
+    "compileOnSave": true,
+    "compilerOptions": {
+        "baseUrl": "src",
+        "paths": {
+            "*": ["*"]
+        }
+    }
+}

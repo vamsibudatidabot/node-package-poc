@@ -1,0 +1,25 @@
+{
+    "include": ["src/**/*.ts"],
+    "exclude": ["src/**/*.test.ts"],
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "declaration": true,
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "forceConsistentCasingInFileNames": true,
+        "listEmittedFiles": true,
+        "moduleResolution": "node",
+        "module": "commonjs",
+        "noEmitOnError": true,
+        "noFallthroughCasesInSwitch": true,
+        "outDir": "build",
+        "inlineSourceMap": true,
+        "inlineSources": true,
+        "strict": true,
+        "target": "ES2021",
+        "baseUrl": "src/",
+        "paths": {
+            "*": ["*"]
+        }
+    }
+}

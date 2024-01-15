@@ -2,9 +2,9 @@
  * Bunch of general purpose static methods for easy use.
  */
 
-import { logger } from "logger";
+// import { logger } from "logger";
 import { Request } from 'express';
-import { InternalServerError } from "errors";
+// import { InternalServerError } from "errors";
 import { isEmpty } from "lodash";
 import crypto from 'crypto';
 
@@ -27,8 +27,8 @@ export function getEnv(envVar: string, fallback: string | undefined = undefined,
         return envValue;
     }
     if (required && typeof fallback === 'undefined') {
-        logger.error(`getEnv(${envVar}, ${fallback}) failed as required is set but nothing is found`, { envVar, fallback, required });
-        throw new InternalServerError(`Environment variable "${envVar}" required but not set`);
+        console.error(`getEnv(${envVar}, ${fallback}) failed as required is set but nothing is found`, { envVar, fallback, required });
+        throw new Error(`Environment variable "${envVar}" required but not set`);
     }
     return fallback ?? '';
 }
@@ -48,7 +48,7 @@ export const nodeEnv = (): NODE_ENVIRONMENTS => {
     if (envKey && NODE_ENVIRONMENTS[envKey]) {
         return NODE_ENVIRONMENTS[envKey];
     }
-    logger.crit(`process.env.NODE_ENV not set or understood=${process.env?.NODE_ENV} envKey=${envKey}`, {  NODEENV: process.env?.NODE_ENV ?? '--' });
+    console.debug(`process.env.NODE_ENV not set or understood=${process.env?.NODE_ENV} envKey=${envKey}`, {  NODEENV: process.env?.NODE_ENV ?? '--' });
     return NODE_ENVIRONMENTS.notset;
 };
 
@@ -71,8 +71,8 @@ export const cleanEmpty = (obj: any): any => {
 
 export const getMethodName = (request: Request) => {
     if (isEmpty(request) || isEmpty(request.route) || isEmpty(request.route.path) || Object.keys(request.route.methods).length === 0) {
-        logger.error(`getMethodName() request parameter is not set`, { request });
-        throw new InternalServerError(`getMethodName() request parameter is not set`);
+        console.error(`getMethodName() request parameter is not set`, { request });
+        throw new Error(`getMethodName() request parameter is not set`);
     }
     return `${Object.keys(request.route.methods)[0].toUpperCase()} ${request.route.path}`;
 }
@@ -86,11 +86,11 @@ export const getMethodName = (request: Request) => {
 export const resolvePromise = async (promise: Promise<any>, promiseName: string): Promise<any> => {
     return new Promise((resolve, reject) => {
         promise.then((data: any) => {
-            logger.info(`Resolved promise ${promiseName}`)
+            console.info(`Resolved promise ${promiseName}`)
             resolve(data);
         }).catch((error: any) => {
             if (error) {
-                logger.error(`Rejected promise ${promiseName}`, {
+                console.error(`Rejected promise ${promiseName}`, {
                     error: error,
                     error_message: error.message,
                 });
