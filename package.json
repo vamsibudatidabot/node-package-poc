@@ -1,0 +1,19 @@
+{
+  "name": "node-package-poc",
+  "version": "0.0.0",
+  "description": "POC on package for dabot node.js services.",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vamsi Krishna Budati",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "knex": "^3.1.0",
+    "lodash": "^4.17.21",
+    "snowflake-sdk": "^1.9.2"
+  }
+}
