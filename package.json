@@ -1,5 +1,5 @@
 {
-  "name": "node-package-poc",
+  "name": "@vamsibudatidabot/node-package-poc",
   "version": "0.0.0",
   "description": "POC on package for dabot node.js services.",
   "main": "src/index.js",
@@ -15,5 +15,14 @@
     "knex": "^3.1.0",
     "lodash": "^4.17.21",
     "snowflake-sdk": "^1.9.2"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vamsibudatidabot/node-package-poc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vamsibudatidabot/node-package-poc/issues"
+  },
+  "homepage": "https://github.com/vamsibudatidabot/node-package-poc#readme"
 }
