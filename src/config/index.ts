@@ -5,7 +5,6 @@ import dotenv from 'dotenv';
 import path from 'path';
 import fs from 'fs';
 import { Pool, Options as PoolOptions } from 'generic-pool'
-import { AppConfig, Config } from "interfaces";
 
 /**
  * This is the config for all possible environments run by this service.
@@ -13,6 +12,17 @@ import { AppConfig, Config } from "interfaces";
  * There is something to be said to make this file much simpler as just a defined object.
  * But being explicit in places where misspellings are common is good, so here's all the interfaces.
  */
+
+interface AppConfig {
+    name: string,
+    port: number
+}  
+
+interface Config {
+    app: AppConfig; // dabot configuration
+    metaDatabase: Knex.Knex.Config   // dabot storage
+    snowFlake: { snowFlakeConnectionOptions: snowflake.ConnectionOptions, snowFlakeConnectionPoolOptions: PoolOptions }
+}
 
 const KnexConfigDefaults: Knex.Knex.Config = {
     client: 'postgresql',
@@ -96,4 +106,4 @@ class ConfigConstructor {
 
 }
 
-export { ConfigConstructor };
+export { ConfigConstructor, Config };
