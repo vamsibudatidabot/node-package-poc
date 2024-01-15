@@ -1,5 +1,5 @@
 {
-  "name": "@vamsibudatidabot/node-package-poc",
+  "name": "@vamsi-budati/node-package-poc",
   "version": "0.0.0",
   "description": "POC on package for dabot node.js services.",
   "main": "src/index.js",
