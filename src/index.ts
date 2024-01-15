@@ -1,3 +1,3 @@
 import * as config from "config";
-
-export { config };
+import * as interfaces from "interfaces"
+export { config, interfaces };
