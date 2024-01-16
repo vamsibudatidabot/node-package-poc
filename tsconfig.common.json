@@ -2,24 +2,14 @@
     "include": ["src/**/*.ts"],
     "exclude": ["src/**/*.test.ts"],
     "compilerOptions": {
-        "experimentalDecorators": true,
-        "declaration": true,
-        "esModuleInterop": true,
-        "resolveJsonModule": true,
-        "forceConsistentCasingInFileNames": true,
-        "listEmittedFiles": true,
-        "moduleResolution": "node",
+        "lib": ["es2022"],
         "module": "commonjs",
-        "noEmitOnError": true,
-        "noFallthroughCasesInSwitch": true,
-        "outDir": "build",
-        "inlineSourceMap": true,
-        "inlineSources": true,
+        "target": "es2022",
         "strict": true,
-        "target": "ES2021",
-        "baseUrl": "src/",
-        "paths": {
-            "*": ["*"]
-        }
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "outDir": "lib",
+        "declaration": true
     }
 }

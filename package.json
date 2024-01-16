@@ -1,12 +1,13 @@
 {
   "name": "@vamsi-budati/node-package-poc",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "POC on package for dabot node.js services.",
   "main": "build/index.js",
+  "types": "lib/index.d.ts",
   "type": "commonjs",
   "scripts": {
     "build": "npm-run-all --parallel clean && tsc",
-    "clean": "rimraf build",
+    "clean": "rimraf lib",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Vamsi Krishna Budati",
