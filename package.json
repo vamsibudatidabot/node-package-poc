@@ -1,6 +1,6 @@
 {
   "name": "@vamsi-budati/node-package-poc",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "POC on package for dabot node.js services.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
