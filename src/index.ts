@@ -1,3 +1,3 @@
-export { ConfigConstructor, Config } from './config/index';
+import utils from 'utils';
 
-export { Utils } from './utils/index';
+exports.Utils = utils.Utils;

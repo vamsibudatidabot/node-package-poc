@@ -10,4 +10,4 @@ const StandardizeQueryParams = {
 
 const Utils = { CommonUtilities, StandardizeQueryParams }
 
-export { Utils };
+export default { Utils };
