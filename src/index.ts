@@ -1,3 +1,5 @@
 import utils from 'utils';
 
-exports.Utils = utils.Utils;
+const Utils = { CommonUtilities: utils.CommonUtilities, StandardizeQueryParams: utils.StandardizeQueryParams }
+
+export { Utils };
