@@ -17,7 +17,7 @@
         "noFallthroughCasesInSwitch": true,
         "inlineSourceMap": true,
         "inlineSources": true,
-        "target": "ES2021",
+        "target": "es6",
         "baseUrl": "src/",
         "paths": {
             "*": ["*"]
