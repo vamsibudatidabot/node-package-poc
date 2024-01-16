@@ -106,4 +106,5 @@ class ConfigConstructor {
 
 }
 
-export { ConfigConstructor, Config };
+export default ConfigConstructor;
+export type { Config }
