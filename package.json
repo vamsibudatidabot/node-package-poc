@@ -1,10 +1,10 @@
 {
   "name": "@vamsi-budati/node-package-poc",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "POC on package for dabot node.js services.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "build": "npm-run-all --parallel clean && tsc",
     "clean": "rimraf lib",
