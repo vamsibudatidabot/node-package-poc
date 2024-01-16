@@ -1,5 +1,6 @@
-import {ConfigConstructor, Config} from './config';
+import {ConfigConstructor} from './config';
 import utils from './utils';
 
 const Utils = { CommonUtilities: utils.CommonUtilities, StandardizeQueryParams: utils.StandardizeQueryParams }
-export { Utils, ConfigConstructor, Config };
+export { Utils, ConfigConstructor };
+export * from './interfaces'
