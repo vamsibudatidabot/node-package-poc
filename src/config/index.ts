@@ -102,4 +102,4 @@ class ConfigConstructor {
 
 }
 
-export default ConfigConstructor
+export {ConfigConstructor, Config}
