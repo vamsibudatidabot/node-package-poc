@@ -4,7 +4,8 @@ import * as snowflake from 'snowflake-sdk';
 import dotenv from 'dotenv';
 import path from 'path';
 import fs from 'fs';
-import { Pool, Options as PoolOptions } from 'generic-pool'
+import { Pool, Options as PoolOptions } from 'generic-pool';
+import { Config } from "../interfaces";
 
 /**
  * This is the config for all possible environments run by this service.
@@ -18,11 +19,6 @@ interface AppConfig {
     port: number
 }  
 
-interface Config {
-    app: AppConfig; // dabot configuration
-    metaDatabase: Knex.Knex.Config   // dabot storage
-    snowFlake: { snowFlakeConnectionOptions: snowflake.ConnectionOptions, snowFlakeConnectionPoolOptions: PoolOptions }
-}
 
 const KnexConfigDefaults: Knex.Knex.Config = {
     client: 'postgresql',
@@ -106,5 +102,4 @@ class ConfigConstructor {
 
 }
 
-export default ConfigConstructor;
-export type { Config }
+export default ConfigConstructor
