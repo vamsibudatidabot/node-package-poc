@@ -1,5 +1,3 @@
-export { ConfigConstructor } from 'config';
+export { ConfigConstructor, Config } from './config/index';
 
-export type { Config } from 'config';
-
-export { Utils } from 'utils';
+export { Utils } from './utils/index';
