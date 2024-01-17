@@ -1,6 +1,6 @@
 import { logger } from "logger";
 import { Request, Response, NextFunction } from 'express';
-import formatHTTPloggerResponse from "logger/formatHTTPLoggerResponse";
+import formatHTTPloggerResponse from "../logger/formatHTTPLoggerResponse";
 
  /**
    * 
