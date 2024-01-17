@@ -12,3 +12,13 @@ export interface Config {
     metaDatabase: Knex.Knex.Config   // dabot storage
     snowFlake: { snowFlakeConnectionOptions: snowflake.ConnectionOptions, snowFlakeConnectionPoolOptions: PoolOptions }
 }
+
+export enum NODE_ENVIRONMENTS {
+    notset = 'notset',
+    development = 'development',
+    local = 'local',
+    stage = 'stage',
+    production = 'production',
+    test = 'test',
+    docker = 'docker'
+}
